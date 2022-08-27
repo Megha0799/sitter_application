@@ -18,8 +18,10 @@ class MyApp extends StatelessWidget {
       // home: HomePage(),
       themeMode: ThemeMode.light,
       theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
-          primaryTextTheme: GoogleFonts.latoTextTheme()),
+        primarySwatch: Colors.deepPurple,
+        fontFamily: GoogleFonts.lato().fontFamily,
+        // primaryTextTheme: GoogleFonts.latoTextTheme()
+      ),
       darkTheme: ThemeData(brightness: Brightness.dark),
       routes: {
         "/": (context) => LoginPage(),
