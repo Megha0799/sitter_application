@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sitter_application/models/product.dart';
 
 import '../widgets/drawer.dart';
+import '../widgets/item_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,12 +11,15 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("MyApp"),
+        title: const Text("MyApp"),
       ),
-      body: Center(
-        child: Container(
-          child: const Text('Welcome'),
-        ),
+      body: ListView.builder(
+        itemCount: CatalogModel.items.length,
+        itemBuilder: (context, index) {
+          return ItemWidget(
+            item: CatalogModel.items[index],
+          );
+        },
       ),
       drawer: const MyDrawer(),
     );
